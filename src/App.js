@@ -4,6 +4,7 @@ import './App.css'
 import {HOME_ROUTE} from './constants'
 import {Home} from './ui/screens/home/home.screen'
 import {OngList} from './ui/screens/ongs/ongs.screen'
+import { OngProfile } from './ui/screens/ongProfile/ongProfile.screen'
 
 function App() {
 	return (
@@ -23,6 +24,14 @@ function App() {
 				element={
 					// <PrivateRoute>
 					<OngList />
+					// </PrivateRoute>
+				}
+			/>
+			<Route
+				path={'/ongProfile'}
+				element={
+					// <PrivateRoute>
+					<OngProfile ong= {"ong"} isViewer={true} />
 					// </PrivateRoute>
 				}
 			/>

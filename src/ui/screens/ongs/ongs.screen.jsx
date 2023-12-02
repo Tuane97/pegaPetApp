@@ -4,6 +4,7 @@ import {Sidebar} from '../../components/sidebar/sidebar.component'
 import {OngsList} from './listOngs'
 import {useEffect, useState} from 'react'
 import {CardOng} from '../../components/cardOng/cardOng.component'
+import { Link } from 'react-router-dom'
 
 export const OngList = () => {
 	const [ongs, setOngs] = useState([])
@@ -21,7 +22,10 @@ export const OngList = () => {
 				<div className="ongList-container">
 					<div>
 						{ongs.map(ong => {
-							return <CardOng ong={ong} />
+							return (
+							<Link to={"/ongProfile"}>
+								<CardOng ong={ong} />
+							</Link>)
 						})}
 					</div>
 					<div className="ongsPaginacao">
