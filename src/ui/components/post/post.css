@@ -1,0 +1,151 @@
+.post-container {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	margin-top: 10vh;
+}
+
+.post {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	min-height: 440px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 40px;
+	box-shadow: 15px 6px 4px rgb(153, 176, 230);
+}
+
+.post__buttons {
+	display: flex;
+	gap: 55px;
+	padding-left: 20px;
+	height: 10vh;
+	background-color: white;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.post__buttons > button {
+	width: 10%;
+	height: 90%;
+	display: flex;
+	align-items: center;
+}
+
+.post-info {
+	width: 100%;
+	display: flex;
+	flex-grow: 2;
+	padding-right: 10px;
+	background-color: white;
+}
+
+.post__content-info {
+	padding-top: 10px;
+}
+
+.post__content-info__ong {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	background-color: #4c7f9c;
+}
+
+.post__content-info__ong h4 {
+	padding-left: 10px;
+	margin: 0px;
+}
+
+.post__content-info__ong__image {
+	background-color: white;
+	display: flex;
+	align-items: center;
+	border-radius: 0px 100% 100% 0px;
+	height: 10%;
+	width: 10%;
+}
+
+.post__content-info__ong__image img {
+	border-radius: 100%;
+	width: 100%;
+}
+
+.post__content-info__animal {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 0px 10px 0px 10px;
+}
+
+.post__content-info__animal p {
+	font-size: 14px;
+	margin: 0px;
+	padding: 0px 0px 10px 10px;
+}
+
+.post__content-image {
+	display: flex;
+	width: 65%;
+	margin-right: 10px;
+	justify-content: center;
+	background-color: #4c7f9c;
+}
+
+.post__content-image img {
+	max-height: 60vh;
+}
+
+.adopt-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	border: none;
+}
+
+.adopt-logo {
+	width: 45px;
+	padding: 5px;
+}
+
+.comment-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	border: none;
+}
+
+.comment-logo {
+	width: 45px;
+}
+
+/* .form-comment {
+	display: flex;
+	justify-content: flex-end;
+	padding-top: 10px;
+	width: 100%;
+	background-color: rgb(153, 176, 230);
+}
+
+.form-comment > input {
+	width: 80%;
+	margin-right: 10px;
+}
+
+.form-comment > button {
+	width: 9%;
+}
+.ok-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	border: none;
+}
+
+.ok-logo {
+	background-color: rgb(197, 212, 247);
+	border-radius: 10px;
+	width: 70%;
+} */

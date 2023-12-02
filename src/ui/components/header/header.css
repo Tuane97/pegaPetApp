@@ -1,0 +1,45 @@
+.header {
+	display: flex;
+	position: fixed;
+	background-color: #3aa2b0;
+	gap: 78%;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 8vh;
+	z-index: 2;
+}
+
+.header__logo {
+	text-decoration: none;
+	color: black;
+	display: flex;
+	align-items: center;
+	font-family: cursive;
+	font-size: 35px;
+	height: 100%;
+}
+
+.logo {
+	height: 65%;
+}
+
+.header__logout-post {
+	cursor: pointer;
+	height: 100%;
+	align-items: center;
+	display: flex;
+}
+
+.header__logout-post > img {
+	height: 75%;
+	border-radius: 100%;
+}
+
+.logout-button {
+	background-color: transparent;
+	border: none;
+	font-family: cursive;
+	font-size: 20px;
+	cursor: pointer;
+}

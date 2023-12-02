@@ -1,0 +1,23 @@
+.home {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+}
+
+.home__solicitations {
+	background-color: rgb(197, 212, 247);
+	box-shadow: 5px 6px 4px rgb(153, 176, 230);
+	padding: 10px;
+	border-radius: 10px;
+	position: fixed;
+	top: 10%;
+	left: 70%;
+	width: 15%;
+}
+
+.app-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}

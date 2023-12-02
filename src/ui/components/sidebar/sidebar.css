@@ -1,0 +1,45 @@
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	background-color: #39b1c2;
+	padding-top: 7vh;
+	margin-top: 8vh;
+	gap: 50px;
+	align-items: center;
+	width: 11%;
+	height: 100%;
+}
+
+.sidebar__item {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	width: 71%;
+	text-decoration: none;
+	color: black;
+}
+
+.logo-item {
+	height: 35px;
+}
+/*
+.header__logout-post {
+	cursor: pointer;
+	display: flex;
+	width: min-content;
+}
+
+.header__logout-post > img {
+	width: 50%;
+	border-radius: 100%;
+}
+
+.logout-button {
+	background-color: transparent;
+	border: none;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 18px;
+	cursor: pointer;
+}
+*/
