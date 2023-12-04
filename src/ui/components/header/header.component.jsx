@@ -32,7 +32,9 @@ export const Header = () => {
 				PegaPet
 			</Link>
 			<div className="header__logout-post">
-				<img src={imageDefault} alt="profile" />
+				<Link to={"/userAccount"} className='header__logout-post logo-user'>
+					<img src={imageDefault} alt="profile" />
+				</Link>
 				<button className="logout-button" onClick={handleLogout}>
 					Logout
 				</button>

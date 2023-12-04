@@ -41,7 +41,7 @@ export const Sidebar = () => {
 				<img className="logo-item" src={logoSearch} alt="logo" />
 				Pesquisar
 			</Link>
-			<Link className="sidebar__item" to={'/home'}>
+			<Link className="sidebar__item" to={'/myProcess'}>
 				<img className="logo-item" src={logoAdocao} alt="logo" />
 				Minhas Adoções
 			</Link>

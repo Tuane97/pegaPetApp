@@ -50,7 +50,7 @@ export const Posts = ({loggedUser /*, idUser*/}) => {
 					</button> */}
 				</>
 			) : (
-				<h3>Não há posts a serem exibidos</h3>
+				<h3 className="message-empty">Não há posts a serem exibidos</h3>
 			)}
 		</div>
 	)

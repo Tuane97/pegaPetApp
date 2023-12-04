@@ -13,7 +13,6 @@
 	margin-left: 10%;
 	padding-bottom: 5vh;
 	padding-top: 10vh;
-	gap: 30px;
 	background-color: white;
 }
 
@@ -26,6 +25,7 @@
 .profile-foto{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 80px;
     padding-top: 53px;
     padding-left: 25px;
@@ -57,7 +57,25 @@
     
 }
 
-.profile-info div{
+.profile-info.all-width{
+    width: 100%;
+}
+
+.profile-info.all-width > p{
+    margin-left: 25px;
+    
+}
+
+.profile-info__data.preferencias{
+    height: 150px;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: text-top;
+    overflow-y: scroll
+}
+
+.profile-info > div{
     width: 100%;
     padding-top: 10px;
     padding-bottom: 25px;
@@ -66,6 +84,7 @@
 
 .profile-info__data{
     background-color: white;
+    color: black;
     height: 30px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -74,28 +93,24 @@
     font-size: 12px;
 }
 
-.profile-info div p{
+.profile-info.isViewer > div {
+    height: 155px;
+    overflow-y: scroll;
+}
+
+.profile-info > div p{
     display: flex;
     align-items: center;
     margin-left: 40px;
     margin-right: 40px;
-    
     margin-bottom: 5px;
+}
+
+.profile-info > div .label{
+    color: white;
 }
 
 .profile__imagem {
 	width: 200px;
 	height: 200px;
-}
-.inner {
-	position: relative;
-	height: 0;
-	padding-bottom: 100%;
-}
-
-.inner > img {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
 }

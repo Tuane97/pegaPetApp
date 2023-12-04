@@ -6,10 +6,12 @@ import './post.css'
 import adopt from '../../../utils/images/adopt.png'
 import commentImage from '../../../utils/images/coment.png'
 import profileDefault from '../../../utils/images/profile-default.png'
+import { useNavigate } from 'react-router-dom'
 // import okImage from '../../../utils/images/ok.png'
 
 export const Post = ({/*loggedUser,*/ _post}) => {
 	const [post, setPost] = useState()
+	const navigate = useNavigate()
 	// const [comment, setComment] = useState(COMMENT_INITIAL)
 	// const postApi = usePostApi()
 	// const commentApi = useCommentApi()
@@ -31,11 +33,11 @@ export const Post = ({/*loggedUser,*/ _post}) => {
 	// 	} catch (error) {}
 	// }
 
-	// 	const handleChangeComment = event => {
-	// 		const {value} = event.target
-	//
-	// 		setComment(currentValue => ({...currentValue, comment: value}))
-	// 	}
+		// const handleCreateProcess = event => {
+		// 	const {value} = event.target
+	
+		// 	navigate(currentValue => ({...currentValue, comment: value}))
+		// }
 
 	// const handlePublishComment = async event => {
 	// 	event.preventDefault()
@@ -73,7 +75,7 @@ export const Post = ({/*loggedUser,*/ _post}) => {
 				</div>
 			</div>
 			<div className="post__buttons">
-				<button className="adopt-button">
+				<button className="adopt-button" onClick={() => navigate("/createProcess")}>
 					<img className="adopt-logo" src={adopt} alt="like" />
 				</button>
 				<button className="comment-button">

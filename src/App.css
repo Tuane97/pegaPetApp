@@ -8,3 +8,7 @@
 ::-webkit-scrollbar-thumb {
 	background: #dad7d7;
 }
+
+.message-empty{
+	margin-left: 100px;
+}

@@ -31,7 +31,7 @@
 	display: flex;
 }
 
-.header__logout-post > img {
+.header__logout-post.logo-user img{
 	height: 75%;
 	border-radius: 100%;
 }

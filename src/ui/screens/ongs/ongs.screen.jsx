@@ -3,7 +3,7 @@ import {Header} from '../../components/header/header.component'
 import {Sidebar} from '../../components/sidebar/sidebar.component'
 import {OngsList} from './listOngs'
 import {useEffect, useState} from 'react'
-import {CardOng} from '../../components/cardOng/cardOng.component'
+import {CardOng} from '../../components/ongs/cardOng.component'
 import { Link } from 'react-router-dom'
 
 export const OngList = () => {
@@ -23,7 +23,7 @@ export const OngList = () => {
 					<div>
 						{ongs.map(ong => {
 							return (
-							<Link to={"/ongProfile"}>
+							<Link to={"/ongProfile"}  className='link-button'>
 								<CardOng ong={ong} />
 							</Link>)
 						})}

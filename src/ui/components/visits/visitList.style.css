@@ -1,0 +1,48 @@
+tr.header-table{
+    background-color: #D9D9D9;
+    width: auto;
+    margin: 0px 25px;
+}
+
+tr.visitCard{
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+tr.visitCard td{
+    text-align: center;
+}
+
+table{
+    width: -webkit-fill-available;
+    background: #D9D9D9;
+    margin: 0px 40px;
+}
+
+div.visitList{
+    padding-top: 25px;
+}
+
+td, tr{
+    height: 30px;
+}
+
+.processList.visitList{
+    width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.processList-container{
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 85vh;
+	width: 65%;
+	margin-left: 10%;
+	padding-bottom: 5vh;
+	padding-top: 10vh;
+	gap: 30px;
+	background-color: white;
+}
