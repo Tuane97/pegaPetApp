@@ -9,7 +9,7 @@ import profileDefault from '../../../utils/images/profile-default.png'
 import { useNavigate } from 'react-router-dom'
 // import okImage from '../../../utils/images/ok.png'
 
-export const Post = ({/*loggedUser,*/ _post}) => {
+export const Post = ({ _post}) => {
 	const [post, setPost] = useState()
 	const navigate = useNavigate()
 	// const [comment, setComment] = useState(COMMENT_INITIAL)
@@ -33,11 +33,12 @@ export const Post = ({/*loggedUser,*/ _post}) => {
 	// 	} catch (error) {}
 	// }
 
-		// const handleCreateProcess = event => {
-		// 	const {value} = event.target
-	
-		// 	navigate(currentValue => ({...currentValue, comment: value}))
-		// }
+	const handleCreateProcess = (id) => {
+		// const {value} = event.target
+		console.log("id", id);
+		localStorage.setItem('animalId', id)	
+		navigate("/createProcess")
+	}
 
 	// const handlePublishComment = async event => {
 	// 	event.preventDefault()
@@ -75,7 +76,7 @@ export const Post = ({/*loggedUser,*/ _post}) => {
 				</div>
 			</div>
 			<div className="post__buttons">
-				<button className="adopt-button" onClick={() => navigate("/createProcess")}>
+				<button className="adopt-button" onClick={() => handleCreateProcess(post?.id)}>
 					<img className="adopt-logo" src={adopt} alt="like" />
 				</button>
 				<button className="comment-button">

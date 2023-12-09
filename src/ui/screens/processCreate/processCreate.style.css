@@ -52,3 +52,17 @@ input.profile-info__data{
     width: 100%;
     justify-content: space-between;
 }
+
+.button-form{
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+}
+
+.button-form button{
+    width: 42%;
+    height: 45px;
+    background-color: #00EAEA;
+    border: none;
+
+}

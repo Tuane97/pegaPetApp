@@ -10,6 +10,10 @@ import { OngViewer } from './ui/screens/profileView/ong copy'
 import { useEffect, useState } from 'react'
 import { ProcessList } from './ui/screens/process/processList.screen'
 import { ProcessCreate } from './ui/screens/processCreate/processCreate.screen'
+import { LoginScreen } from './ui/screens/login/login.screen'
+import { ResgisterUser } from './ui/screens/register-user/registerUser.screen'
+import { UserGlobalProvider } from './context/user/user.context'
+
 
 function App() {
 	const [usuario, setUsuario] = useState([])
@@ -27,9 +31,10 @@ function App() {
 	console.log("app viewer----->", usuarioViewer)
 
 	return (
+		<UserGlobalProvider>
 		<Routes>
-			{/* <Route path="/" element={<Login />} />
-			<Route path="/register" element={<Register />} /> */}
+			<Route path="/" element={<LoginScreen />} />
+			<Route path="/register" element={<ResgisterUser />} />
 			<Route
 				path={HOME_ROUTE}
 				element={
@@ -79,6 +84,7 @@ function App() {
 				}
 			/>
 		</Routes>
+		</UserGlobalProvider>
 	)
 }
 

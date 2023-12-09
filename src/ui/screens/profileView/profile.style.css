@@ -114,3 +114,9 @@
 	width: 200px;
 	height: 200px;
 }
+
+textarea.profile-info__data{
+    height: 140px;
+}
+
+
