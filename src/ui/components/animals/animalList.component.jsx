@@ -13,25 +13,31 @@ export const AnimalList = () =>{
 	const userApi = useUserApi()
 
 	useEffect(() => {
-        const userId = parseInt(localStorage.getItem("userProfile"))
+        const user = JSON.parse(localStorage.getItem("userProfile"))
         const getUser = async()=>{
-            const _usuario = await userApi.searchUser(userId)
+            const _usuario = await userApi.searchUser(user.idUsuario)
             setUsuario(_usuario)
         }
 		getUser()
 	}, [userApi])
+	
+	console.log("animais", animals);
+
+	console.log(usuario);
 
 	useEffect(() => {
         
         const getAnimal = async()=>{
 			let _animals;
 			if(usuario?.tipoUsuario === UserType.ONG){
+				console.log("é ONG");
 				_animals = await animalApi.listAnimalByOng(usuario?.idUsuario, page)
 			} else if (usuario?.tipoUsuario === UserType.ADOTANTE){
+				console.log("é Adotante");
 				_animals = await animalApi.listAnimalByAdotante(usuario?.idUsuario, page)
 			}
-            
-            setAnimals(_animals)
+            console.log("final do if");
+            setAnimals(_animals?.content)
         }
 		getAnimal()
 	}, [animalApi, usuario])

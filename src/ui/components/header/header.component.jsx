@@ -14,8 +14,7 @@ export const Header = () => {
 		const user = JSON.parse(localStorage.getItem('user'))
 		setLoggedUser(user)
 	}, [])
-
-	console.log("user home", loggedUser);
+	
 	const handleLogout = async () => {
 		localStorage.removeItem('user')
 		setGlobalUser({})

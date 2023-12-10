@@ -14,9 +14,9 @@ export const VisitList = () => {
     const userApi = useUserApi()
 
     useEffect(() => {
-        const userId = parseInt(localStorage.getItem("userProfile"))
+        const user = JSON.parse(localStorage.getItem("userProfile"))
         const getUser = async()=>{
-            const _usuario = await userApi.searchUser(userId)
+            const _usuario = await userApi.searchUser(user.idUsuario)
             setUsuario(_usuario)
         }
 		getUser()
@@ -27,7 +27,7 @@ export const VisitList = () => {
             const getVisit = async()=>{
                 try{
                     const _visit = await visitApi.listVisit(usuario?.idUsuario, usuario?.tipoUsuario, page)
-                    setVisit(_visit)
+                    setVisit(_visit.content)
                 } catch (error){
                     console.log(error)
                 }
@@ -37,6 +37,8 @@ export const VisitList = () => {
         }
         
 	}, [visitApi, usuario])
+
+    console.log(visit)
 
     return (
         <div className="visitList">

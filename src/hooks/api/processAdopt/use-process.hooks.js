@@ -2,7 +2,7 @@ import {useMemo} from 'react'
 import {BASE_URL} from '../../../constants/index'
 import {useHttp} from '../_base/use-http.hooks'
 
-export const useProcessAdopt = () => {
+export const useProcessAdoptApi = () => {
     const instanceHttp = useHttp(`${BASE_URL}/processoAdocao`)
 
     const addProcess = async (ongId, adotanteId, animalId, contato, data, hora, detalhe) => {

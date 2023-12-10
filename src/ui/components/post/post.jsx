@@ -14,7 +14,6 @@ export const Post = ({ _post}) => {
 	}, [_post])
 
 	const handleCreateProcess = (_post) => {
-		console.log("post", _post);
 		localStorage.setItem('postAnimal', JSON.stringify(_post))	
 		navigate("/createProcess")
 	}

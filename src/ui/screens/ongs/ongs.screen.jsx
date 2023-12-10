@@ -32,8 +32,8 @@ export const OngList = () => {
 		getOngs()
 	}, [ongApi, page])
 
-	const handleClick = (id) => {
-		localStorage.setItem("userProfile", id)
+	const handleClick = (user) => {
+		localStorage.setItem("userProfile", JSON.stringify(user))
 		navigate("/ongProfile")
 	}
 
@@ -44,9 +44,9 @@ export const OngList = () => {
 			<div className="ongList">
 				<div className="ongList-container">
 					<div>
-						{ongs?.map(ong => {
+						{ongs?.map((ong, index) => {
 							return (
-							<button onClick={() => handleClick(ong.idUsuario)}  className='link-button-ong'>
+							<button key={index} onClick={() => handleClick(ong)}  className='link-button-ong'>
 								<CardOng ong={ong} />
 							</button>)
 						})}

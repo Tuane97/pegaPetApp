@@ -14,14 +14,30 @@ export const Profile = ({isViewer}) => {
     const userApi = useUserApi()
 
 	useEffect(() => {
-        const userId = parseInt(localStorage.getItem("userProfile"))
-        const getUser = async()=>{
-            const _usuario = await userApi.searchUser(userId)
-            setUsuario(_usuario)
-            setcontact(usuario?.contato)
+        let user;
+        if(isViewer){
+            user = JSON.parse(localStorage.getItem("userProfile"))
+            
+        } else {
+            user = JSON.parse(localStorage.getItem("user"))
         }
-		getUser()
-	}, [userApi])
+        try{
+            const getUser = async()=>{
+                const _usuario = await userApi.searchUser(user?.idUsuario)
+                localStorage.setItem("userProfile", JSON.stringify(user))
+                setUsuario(_usuario)
+                setcontact(usuario?.contatos)
+            }
+            getUser()
+        }catch(error){
+            console.log(error);
+        }
+
+        
+
+        
+        
+	}, [userApi, isViewer])
 
     var _item;
 
@@ -35,7 +51,7 @@ export const Profile = ({isViewer}) => {
                     <div className="profile-foto">
                         <div className="profile__imagem">
                             <div className="inner">
-                                <img src={imageDefault} alt="" />
+                                <img src={usuario.foto || imageDefault} alt="" />
                             </div>
                         </div>
                         <div className="profile-foto__buttons">
@@ -58,7 +74,7 @@ export const Profile = ({isViewer}) => {
                             <div>
                                 <p className="label">Contato</p>
                                 <p className="profile-info__data">{contact?.map(item =>{
-                                    _item = item + " / "
+                                    _item = item.nrContato + " / "
                                     return _item})}</p>
                                 <p className="label">Endereço</p>
                                 <p className="profile-info__data">{usuario?.endereco}</p>
