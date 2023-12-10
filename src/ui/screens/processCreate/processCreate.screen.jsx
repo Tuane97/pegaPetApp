@@ -4,25 +4,30 @@ import {useEffect, useState} from 'react'
 import imageDefault from "../../../utils/images/profile-default.png"
 import "./processCreate.style.css"
 import { useGlobalUser } from '../../../context/user/user.context'
-import { PROCESS_INFO_CONST } from '../../../constants'
+import { HOME_ROUTE, PROCESS_INFO_CONST } from '../../../constants'
 import { useProcessAdopt } from '../../../hooks/api/processAdopt/use-process.hooks'
+import { useNavigate } from 'react-router-dom'
 
 export const ProcessCreate = () => {
     const [ globalUser] = useGlobalUser()
 	const [usuario, setUsuario] = useState([])
+    const [postAnimal, setPostAnimal] = useState({})
     const [processInfo, setProcessInfo] = useState(PROCESS_INFO_CONST)
     const processApi = useProcessAdopt()
+    const navigate = useNavigate();
+    
 
 	useEffect(() => {
+        const _postAnimal = JSON.parse(localStorage.getItem('postAnimal'))
+        setPostAnimal(_postAnimal)
 		setUsuario(globalUser)
 	}, [])
 
     const handleClick = async() => {
-		console.log(processInfo)
 		try {
-			await processApi.addProcess(registInfo.userType, registInfo.name, registInfo.email, registInfo.address, registInfo.password, registInfo.cnpj, registInfo.nrContact, registInfo.photo, registInfo.preferences)
-			setRegistInfo(REGISTRATION_INFO_CONST)
-			navigate('/')
+			await processApi.addProcess(postAnimal.ong.id, globalUser.idUsuario, postAnimal.id, processInfo.contact, processInfo.date, processInfo.hour, processInfo.observation)
+			setProcessInfo(PROCESS_INFO_CONST)
+			navigate(HOME_ROUTE)
 		} catch (error) {
 			console.log(error)
 		}
@@ -75,7 +80,7 @@ export const ProcessCreate = () => {
                                 </div>
                                 <div className= "button-form">
                                     <button onClick={() => handleClick()}>Iniciar</button>
-                                    <button>Cancelar</button>
+                                    <button onClick={() => navigate(HOME_ROUTE)}>Cancelar</button>
                                 </div>
                                 
                             </div>

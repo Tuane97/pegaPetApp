@@ -1,6 +1,6 @@
 export const UserType = {
-    ONG: "ong",
-    ADOTANTE: "adotante"
+    ONG: "ONG",
+    ADOTANTE: "ADOTANTE"
 }
 
 

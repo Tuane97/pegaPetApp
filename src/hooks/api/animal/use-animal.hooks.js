@@ -2,7 +2,7 @@ import {useMemo} from 'react'
 import {BASE_URL} from '../../../constants/index'
 import {useHttp} from '../_base/use-http.hooks'
 
-export const useAnimal = () => {
+export const useAnimalApi = () => {
     const instanceHttp = useHttp(`${BASE_URL}/animal`)
 
     const addAnimal = async (ongId, nome, idade, raca, foto, adotado, caracteristicas) => {
@@ -22,16 +22,19 @@ export const useAnimal = () => {
 
     const listAllDisp = async (page) => {
 		const response = await instanceHttp.get(`/disponiveis`, {params: {size: 10, page}})
+        localStorage.setItem("postTotalPage", response.totalPages)
 		return response
 	}
 
     const listAnimalByOng = async (ongId, page) => {
 		const response = await instanceHttp.get(`/${ongId}/ong`, {params: {size: 10, page}})
+        localStorage.setItem("animalOngTotalPage", response.totalPages)
 		return response
     }
 
     const listAnimalByAdotante = async (adotanteId, page) => {
 		const response = await instanceHttp.get(`/${adotanteId}/adotante`, {params: {size: 10, page}})
+        localStorage.setItem("AnimalAdoptedTotalPage", response.totalPages)
 		return response
 	}
 

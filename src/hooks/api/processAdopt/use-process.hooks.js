@@ -6,7 +6,7 @@ export const useProcessAdopt = () => {
     const instanceHttp = useHttp(`${BASE_URL}/processoAdocao`)
 
     const addProcess = async (ongId, adotanteId, animalId, contato, data, hora, detalhe) => {
-        const response = await instanceHttp.post('/', {ongId, adotanteId, animalId, contato, data, hora, detalhe})
+        const response = await instanceHttp.post( '', {ongId, adotanteId, animalId, contato, data, hora, detalhe})
         return response
     }
 

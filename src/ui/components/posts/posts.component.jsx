@@ -1,23 +1,24 @@
 import {useEffect, useState} from 'react'
-import { useAnimal } from '../../../hooks/api/animal/use-animal.hooks'
-import {usePagination, } from '../../../hooks/paginatio/use-pagination'
-// import {PostsList} from './listPost'
+import { useAnimalApi } from '../../../hooks/api/animal/use-animal.hooks'
+import {usePagination } from '../../../hooks/paginatio/use-pagination'
 import {Post} from '../post/post'
 
-export const Posts = ({loggedUser}) => {
+export const Posts = () => {
 	const [posts, setPosts] = useState()
-	const {page, totalPage, handleNextPage, handlePreviousPage} = usePagination()
+	const {page, handleNextPage, handlePreviousPage} = usePagination()
+	const [totalPage, setTotalPage] = useState();
 
 	const INITIAL_PAGE = 0
 	const LAST_PAGE = totalPage - 1
-	const animalApi = useAnimal()
+	const animalApi = useAnimalApi()
 
 	useEffect(
 		() => {
+			const pages = parseInt(localStorage.getItem("postTotalPage"))
+			setTotalPage(pages)
 			const getPosts = async () => {
 				try {			
 					const _posts = await animalApi.listAllDisp(page)
-					console.log(_posts)
 					setPosts(_posts.content)					
 				} catch (error) {
 					console.log(error)
@@ -34,8 +35,8 @@ export const Posts = ({loggedUser}) => {
 		<div className="post-container">
 			{posts?.length ? (
 				<>
-					{posts?.map(post => (
-						<Post key={post.idPost} _post={post} />
+					{posts?.map((post, index) => (
+						<Post key={index} _post={post} />
 					))}
 					<button disabled={page === INITIAL_PAGE} onClick={handlePreviousPage}>
 						Previous Page

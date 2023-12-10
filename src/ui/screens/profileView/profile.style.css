@@ -10,6 +10,7 @@
 	flex-direction: column;
 	align-items: center;
 	width: 65%;
+    height: 85vh;
 	margin-left: 10%;
 	padding-bottom: 5vh;
 	padding-top: 10vh;
@@ -95,7 +96,7 @@
 
 .profile-info.isViewer > div {
     height: 155px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .profile-info > div p{

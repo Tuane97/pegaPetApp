@@ -1,15 +1,42 @@
 import { useEffect, useState } from "react"
-import { ListVisits } from "./visits"
 import { VisitCard } from "./visitCard.component"
 import "./visitList.style.css"
+import { useVisitApi } from "../../../hooks/api/visit/use-visit.hooks"
+import { usePagination } from "../../../hooks/paginatio/use-pagination"
+import { useUserApi } from "../../../hooks/api/user/use-user.hooks"
 
-export const VisitList = (idUsuario) => {
+export const VisitList = () => {
     const [visit, setVisit] = useState([])
+    const [usuario, setUsuario] = useState([])
+    const {page, handleNextPage, handlePreviousPage} = usePagination()
+
+    const visitApi = useVisitApi()
+    const userApi = useUserApi()
 
     useEffect(() => {
-		const _visit = ListVisits()
-		setVisit(_visit)
-	}, [])
+        const userId = parseInt(localStorage.getItem("userProfile"))
+        const getUser = async()=>{
+            const _usuario = await userApi.searchUser(userId)
+            setUsuario(_usuario)
+        }
+		getUser()
+	}, [userApi])
+
+	useEffect(() => {
+        if(usuario?.idUsuario){
+            const getVisit = async()=>{
+                try{
+                    const _visit = await visitApi.listVisit(usuario?.idUsuario, usuario?.tipoUsuario, page)
+                    setVisit(_visit)
+                } catch (error){
+                    console.log(error)
+                }
+                
+            }
+            getVisit()
+        }
+        
+	}, [visitApi, usuario])
 
     return (
         <div className="visitList">

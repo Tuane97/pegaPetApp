@@ -61,13 +61,14 @@
 	display: flex;
 	align-items: center;
 	border-radius: 0px 100% 100% 0px;
-	height: 10%;
-	width: 10%;
+	width: 30px;
+    height: 30px;
 }
 
 .post__content-info__ong__image img {
 	border-radius: 100%;
-	width: 100%;
+	width: 30px;
+    height: 30px;
 }
 
 .post__content-info__animal {
@@ -119,33 +120,3 @@
 .comment-logo {
 	width: 45px;
 }
-
-/* .form-comment {
-	display: flex;
-	justify-content: flex-end;
-	padding-top: 10px;
-	width: 100%;
-	background-color: rgb(153, 176, 230);
-}
-
-.form-comment > input {
-	width: 80%;
-	margin-right: 10px;
-}
-
-.form-comment > button {
-	width: 9%;
-}
-.ok-button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: transparent;
-	border: none;
-}
-
-.ok-logo {
-	background-color: rgb(197, 212, 247);
-	border-radius: 10px;
-	width: 70%;
-} */
