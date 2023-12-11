@@ -5,8 +5,8 @@ import {useHttp} from '../_base/use-http.hooks'
 export const useAnimalApi = () => {
     const instanceHttp = useHttp(`${BASE_URL}/animal`)
 
-    const addAnimal = async (ongId, nome, idade, raca, foto, adotado, caracteristicas) => {
-        const response = await instanceHttp.post('/', {ongId, nome, idade, raca, foto, adotado, caracteristicas})
+    const addAnimal = async (ongId, nome, idade, raca, foto, caracteristicas) => {
+        const response = await instanceHttp.post('', {ongId, nome, idade, raca, foto, caracteristicas})
         return response
     }
 

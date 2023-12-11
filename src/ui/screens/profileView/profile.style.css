@@ -43,7 +43,9 @@
 }
 
 .profile-foto__buttons button{
-    
+    color: black;
+    border: none;
+    background-color: lightgray;
     height: 30px;
 }
 

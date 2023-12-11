@@ -8,9 +8,11 @@ import { Sidebar } from "../../components/sidebar/sidebar.component"
 import { useUserApi } from "../../../hooks/api/user/use-user.hooks"
 import imageDefault from "../../../utils/images/profile-default.png"
 import plusIcon from "../../../utils/images/plus_icon.png"
+import { useNavigate } from "react-router-dom"
 
 export const Profile = ({isViewer}) => {
 	const [usuario, setUsuario] = useState([])
+    const navigate = useNavigate()
     const userApi = useUserApi()
 
 	useEffect(() => {
@@ -117,7 +119,7 @@ export const Profile = ({isViewer}) => {
                 <div className="profile-info all-width">
                     <div className="div-animal">
                         <p className="title-animal">Animais</p>
-                        <button className="button-animal">
+                        <button onClick={() => navigate("/addAnimal")} className="button-animal">
                             <img src={plusIcon} alt="" />
                         </button>                        
                     </div>

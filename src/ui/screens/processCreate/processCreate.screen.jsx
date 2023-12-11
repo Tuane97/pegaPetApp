@@ -49,11 +49,11 @@ export const ProcessCreate = () => {
                         <div className="profile-foto">
                             <div className="profile__imagem">
                                 <div className="inner">
-                                    <img src={imageDefault} alt="" />
+                                    <img src={postAnimal?.foto || imageDefault} alt="" />
                                 </div>
                             </div>
                             <div className="profile-foto__buttons">
-                                <button disabled>Johny</button>
+                                <button disabled>{postAnimal?.nome}</button>
                             </div>
                         </div>
                             <div className="processCreate-info profile-info">

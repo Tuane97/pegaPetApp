@@ -9,6 +9,7 @@ import { ProcessCreate } from './ui/screens/processCreate/processCreate.screen'
 import { LoginScreen } from './ui/screens/login/login.screen'
 import { ResgisterUser } from './ui/screens/register-user/registerUser.screen'
 import { UserGlobalProvider } from './context/user/user.context'
+import { AnimalRegister } from './ui/screens/animalRegister/animalregister'
 
 
 function App() {
@@ -63,6 +64,14 @@ function App() {
 				element={
 					// <PrivateRoute>
 					<ProcessCreate/>
+					// </PrivateRoute>
+				}
+			/>
+			<Route
+				path={'/addAnimal'}
+				element={
+					// <PrivateRoute>
+					<AnimalRegister/>
 					// </PrivateRoute>
 				}
 			/>

@@ -11,3 +11,11 @@ export const INFO_PROCESS_VISIT = {
     status: '',
     observation: ''
 }
+
+export const ANIMAL_INFO_CONST = {
+    name: '',
+	race: '',
+    age: '',
+    photo: '',
+	characteristics: ''
+}
