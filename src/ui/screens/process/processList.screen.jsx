@@ -7,38 +7,42 @@ import { Sidebar } from "../../components/sidebar/sidebar.component"
 import { useProcessAdoptApi } from "../../../hooks/api/processAdopt/use-process.hooks"
 import { UserType } from "../../../utils/enums/userType.enum"
 import { usePagination } from "../../../hooks/paginatio/use-pagination"
+import { useUserApi } from "../../../hooks/api/user/use-user.hooks"
+import { useVisitApi } from "../../../hooks/api/visit/use-visit.hooks"
 
 export const ProcessList = (idUsuario) => {
     const [process, setProcess] = useState([])
     const [usuario, setUsuario] = useState([])    
 	const {page, handleNextPage, handlePreviousPage} = usePagination()
     const processApi = useProcessAdoptApi()
+    const userApi = useUserApi()
 
     
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem("user"))
-        setUsuario(user)
-        // const getUser = async()=>{
-        //     const _usuario = await userApi.searchUser(userId)
-        //     setUsuario(_usuario)
-        // }
-		// getUser()
-	}, [])
+        const getUser = async()=>{
+            const _usuario = await userApi.searchUser(user.idUsuario)
+            setUsuario(_usuario)
+        }
+		getUser()
+	}, [userApi])
 
 	useEffect(() => {
         
         const getProcess = async()=>{
-			let _animals;
+			let _process;
 			if(usuario?.tipoUsuario === UserType.ONG){
-				_animals = await processApi.listProcessByOng(usuario?.idUsuario, page)
+				_process = await processApi.listProcessByOng(usuario?.idUsuario, page)
 			} else if (usuario?.tipoUsuario === UserType.ADOTANTE){
-				_animals = await processApi.listProcessByAdotante(usuario?.idUsuario, page)
+				_process = await processApi.listProcessByAdotante(usuario?.idUsuario, page)
 			}
             
-            setProcess(_animals)
+            setProcess(_process?.content)
         }
 		getProcess()
 	}, [processApi, usuario])
+
+    console.log("process", process);
 
     return (
         <>
@@ -58,14 +62,8 @@ export const ProcessList = (idUsuario) => {
                                 <th>Detalhes</th>
                             </tr>
                             {process?.map((processItem, index) => (
-                                <ProcessCard key={index} /*loggedUser={loggedUser}*/ process={processItem} />
+                                <ProcessCard key={index} process={processItem} setProcess={(_process)=>setProcess(_process)} user={usuario}/>
                             ))}
-                            {/* <button disabled={page === INITIAL_PAGE} onClick={handlePreviousPage}>
-                                Previous Page
-                            </button>
-                            <button disabled={page === LAST_PAGE} onClick={handleNextPage}>
-                                Next Page
-                            </button> */}
                         </table>
                     ) : (
                         <h3 className="message-empty">Não há Processos a serem exibidos</h3>

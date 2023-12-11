@@ -1,0 +1,7 @@
+export const StatusVisit = {
+    SOLICITADA: "SOLICITADA",
+    AGENDADA: "AGENDADA",
+    APROVADA: "APROVADA",
+    CANCELADA: "CANCELADA",
+    REPROVADA: "REPROVADA"
+}

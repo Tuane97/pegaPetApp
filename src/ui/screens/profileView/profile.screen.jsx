@@ -7,10 +7,10 @@ import { Header } from "../../components/header/header.component"
 import { Sidebar } from "../../components/sidebar/sidebar.component"
 import { useUserApi } from "../../../hooks/api/user/use-user.hooks"
 import imageDefault from "../../../utils/images/profile-default.png"
+import plusIcon from "../../../utils/images/plus_icon.png"
 
 export const Profile = ({isViewer}) => {
 	const [usuario, setUsuario] = useState([])
-	const [contact, setcontact] = useState([])
     const userApi = useUserApi()
 
 	useEffect(() => {
@@ -26,20 +26,16 @@ export const Profile = ({isViewer}) => {
                 const _usuario = await userApi.searchUser(user?.idUsuario)
                 localStorage.setItem("userProfile", JSON.stringify(user))
                 setUsuario(_usuario)
-                setcontact(usuario?.contatos)
             }
             getUser()
         }catch(error){
             console.log(error);
         }
-
-        
-
-        
         
 	}, [userApi, isViewer])
 
-    var _item;
+
+    var _item = "";
 
 	return (
         <>
@@ -73,7 +69,7 @@ export const Profile = ({isViewer}) => {
                             <p>Informações de Contato</p>
                             <div>
                                 <p className="label">Contato</p>
-                                <p className="profile-info__data">{contact?.map(item =>{
+                                <p className="profile-info__data">{usuario?.contatos?.map(item =>{
                                     _item = item.nrContato + " / "
                                     return _item})}</p>
                                 <p className="label">Endereço</p>
@@ -87,7 +83,7 @@ export const Profile = ({isViewer}) => {
                     <div className="profile-foto">
                         <div className="profile__imagem">
                             <div className="inner">
-                                <img src={usuario?.foto} alt="" />
+                                <img src={usuario?.foto || imageDefault} alt="" />
                             </div>
                         </div>
                     </div>
@@ -115,11 +111,17 @@ export const Profile = ({isViewer}) => {
                 </div>
                 }
                 <div className="profile-info all-width">
-                    <p>Visitas</p>
+                    <p className="title-visit">Visitas</p>
                     <VisitList />
                 </div>
                 <div className="profile-info all-width">
-                    <p>Animais</p>
+                    <div className="div-animal">
+                        <p className="title-animal">Animais</p>
+                        <button className="button-animal">
+                            <img src={plusIcon} alt="" />
+                        </button>                        
+                    </div>
+                    
                     <AnimalList />
                 </div>
             </div>

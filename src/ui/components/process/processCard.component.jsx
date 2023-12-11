@@ -1,14 +1,17 @@
-export const ProcessCard = ({process}) => {
+import CardPopup from "../cardPopUp/cardPopUp.component"
+
+export const ProcessCard = ({process, user, setProcess}) => {
+
 
 	return (
 		<tr className="visitCard">
-			<td>{process?.animal}</td>
-            <td>{process?.ong}</td>
-            <td>{process?.adotante}</td>
+			<td>{process?.animal?.nome}</td>
+            <td>{process?.ong?.nome}</td>
+            <td>{process?.adotante?.nome}</td>
             <td>{process?.dataInicio}</td>
-            <td>{process?.visita}</td>
+            <td><CardPopup setProcess={(_process)=>setProcess(_process)} info={process} userType={user.tipoUsuario} type="visita"/></td>
             <td>{process?.status}</td>
-            <td>{process?.detalhe}</td>
+            <td><CardPopup info={process} userType={user.tipoUsuario} type="detalhes"/></td>
 		</tr>
 	)
 }

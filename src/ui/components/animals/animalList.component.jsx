@@ -20,10 +20,8 @@ export const AnimalList = () =>{
         }
 		getUser()
 	}, [userApi])
-	
-	console.log("animais", animals);
 
-	console.log(usuario);
+	console.log("Animal component, user:", usuario);
 
 	useEffect(() => {
         
@@ -36,18 +34,20 @@ export const AnimalList = () =>{
 				console.log("é Adotante");
 				_animals = await animalApi.listAnimalByAdotante(usuario?.idUsuario, page)
 			}
-            console.log("final do if");
+			console.log("Animal component, animal useEfect:", _animals?.content);
             setAnimals(_animals?.content)
         }
 		getAnimal()
 	}, [animalApi, usuario])
 
+	console.log("Animal component, animal:", animals);
+
     return (
         <div className="animalList">
             {animals?.length ? (
 				<div>
-					{animals?.map(animal => (
-						<AnimalCard key={animal?.id}  loggedUser={usuario} animal={animal} />
+					{animals?.map((animal, index) => (
+						<AnimalCard key={index} animal={animal} />
 					))}
 				</div>
 			) : (

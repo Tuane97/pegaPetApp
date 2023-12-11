@@ -29,7 +29,7 @@ export const Header = () => {
 			</Link>
 			<div className="header__logout-post">
 				<Link to={"/userAccount"} className='header__logout-post logo-user'>
-					<img src={loggedUser?.urlImage || imageDefault} alt="profile" />
+					<img src={loggedUser?.foto || imageDefault} alt="profile" />
 				</Link>
 				<button className="logout-button" onClick={handleLogout}>
 					Logout

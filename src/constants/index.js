@@ -6,3 +6,8 @@ export const PROCESS_INFO_CONST = {
     date: '',
 	observation: ''
 }
+
+export const INFO_PROCESS_VISIT = {
+    status: '',
+    observation: ''
+}

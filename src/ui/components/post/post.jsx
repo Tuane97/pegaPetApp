@@ -29,7 +29,7 @@ export const Post = ({ _post}) => {
 						<div className="post__content-info__ong__image">
 							<img src={post?.ong?.foto || profileDefault} alt="" />
 						</div>
-						<h4>{post?.ong?.nomeOng}</h4>
+						<h4>{post?.ong?.nome}</h4>
 					</div>
 					<div className="post__content-info__animal">
 						<h5>{post?.nome}</h5>

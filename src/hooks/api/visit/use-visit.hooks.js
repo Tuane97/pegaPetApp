@@ -16,8 +16,8 @@ export const useVisitApi = () => {
 		return response
 	}
 
-	const edit = async ({id, status, observation}) => {
-		const response = await instanceHttp.put(`/${id}`, {status, observation})
+	const edit = async (id, status, observacao) => {
+		const response = await instanceHttp.put(`/${id}`, {status, observacao})
 		return response
 	}
 

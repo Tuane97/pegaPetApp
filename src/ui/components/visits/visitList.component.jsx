@@ -22,6 +22,9 @@ export const VisitList = () => {
 		getUser()
 	}, [userApi])
 
+    console.log("Visit component, user:", usuario);
+    
+
 	useEffect(() => {
         if(usuario?.idUsuario){
             const getVisit = async()=>{
@@ -38,7 +41,7 @@ export const VisitList = () => {
         
 	}, [visitApi, usuario])
 
-    console.log(visit)
+    console.log("Visit component, visit:", visit);
 
     return (
         <div className="visitList">

@@ -63,7 +63,7 @@
 }
 
 .profile-info.all-width > p{
-    margin-left: 25px;
+    margin-left: 40px;
     
 }
 
@@ -120,4 +120,27 @@ textarea.profile-info__data{
     height: 140px;
 }
 
+.profile-info.all-width .div-animal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0;
+}
 
+.div-animal .title-animal{
+    margin: 16px 0px 16px 40px;
+}
+
+.div-animal .button-animal{
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    margin-right: 40px;
+    background-color: transparent;
+    border: none;
+}
+
+.div-animal .button-animal img {
+    width: 100%;
+}

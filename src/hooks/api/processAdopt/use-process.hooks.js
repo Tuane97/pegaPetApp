@@ -10,23 +10,24 @@ export const useProcessAdoptApi = () => {
         return response
     }
 
-    const search = async ({id}) => {
+    const search = async (id) => {
         const response = await instanceHttp.get(`/${id}`)
         return response
     }
 
-    const edit = async ({id, status, detalhes}) => {
-        const response = await instanceHttp.put(`/${id}`, {status, detalhes})
+    const edit = async (id, status, observacao) => {
+        const response = await instanceHttp.put(`/${id}`, {status, observacao})
         return response
     }
 
     const listProcessByOng = async (ongId, page) => {
-		const response = await instanceHttp.get(`${ongId}`, {params: {size: 20, page}})
+        console.log("ongId", ongId);
+		const response = await instanceHttp.get(`${ongId}/ong`, {params: {size: 20, page}})
 		return response
 	}
 
     const listProcessByAdotante = async (adotanteId, page) => {
-		const response = await instanceHttp.get(`${adotanteId}`, {params: {size: 20, page}})
+		const response = await instanceHttp.get(`${adotanteId}/adotante`, {params: {size: 20, page}})
 		return response
 	}
 

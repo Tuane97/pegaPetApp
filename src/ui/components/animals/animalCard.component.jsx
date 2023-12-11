@@ -15,7 +15,7 @@ export const AnimalCard = ({animal}) => {
             <div className="animalCard__info">
                 <p className="name">{animal?.nome}</p>
                 <div className="otherInfos">
-                    {!!animal?.adotante && <p>Adotante: {animal.adotante}</p>}
+                    {!!animal?.adotante && <p>Adotante: {animal.adotante.nome}</p>}
                     <p>Raça: {animal?.raca}</p>
                     <p>Idade: {animal?.idade}</p>
                     <p>Características: {animal?.caracteristicas}</p>
