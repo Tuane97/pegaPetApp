@@ -10,6 +10,7 @@ import { LoginScreen } from './ui/screens/login/login.screen'
 import { ResgisterUser } from './ui/screens/register-user/registerUser.screen'
 import { UserGlobalProvider } from './context/user/user.context'
 import { AnimalRegister } from './ui/screens/animalRegister/animalregister'
+import { PrivateRoute } from './ui/private-route'
 
 
 function App() {
@@ -22,57 +23,57 @@ function App() {
 			<Route
 				path={HOME_ROUTE}
 				element={
-					// <PrivateRoute>
+					<PrivateRoute>
 					<Home />
-					// </PrivateRoute>
+					</PrivateRoute>
 				}
 			/>
 			<Route
 				path={'/ongList'}
 				element={
-					// <PrivateRoute>
+					<PrivateRoute>
 					<OngList />
-					// </PrivateRoute>
+					</PrivateRoute>
 				}
 			/>
 			<Route
 				path={'/ongProfile'}
 				element={
-					// <PrivateRoute>
+					<PrivateRoute>
 					<Profile isViewer={true} />
-					// </PrivateRoute>
+					</PrivateRoute>
 				}
 			/>
 			<Route
 				path={'/userAccount'}
 				element={
-					// <PrivateRoute>
+					<PrivateRoute>
 					<Profile isViewer={false} />
-					// </PrivateRoute>
+					</PrivateRoute>
 				}
 			/>
 			<Route
 				path={'/myProcess'}
 				element={
-					// <PrivateRoute>
+					<PrivateRoute>
 					<ProcessList/>
-					// </PrivateRoute>
+					</PrivateRoute>
 				}
 			/>
 			<Route
 				path={'/createProcess'}
 				element={
-					// <PrivateRoute>
+					<PrivateRoute>
 					<ProcessCreate/>
-					// </PrivateRoute>
+					</PrivateRoute>
 				}
 			/>
 			<Route
 				path={'/addAnimal'}
 				element={
-					// <PrivateRoute>
+					<PrivateRoute>
 					<AnimalRegister/>
-					// </PrivateRoute>
+					</PrivateRoute>
 				}
 			/>
 		</Routes>

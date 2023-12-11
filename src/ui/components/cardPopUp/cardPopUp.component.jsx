@@ -90,7 +90,6 @@ const CardPopup = ({info, userType, type}) => {
 
   const handleChange = (event) => {
     setInputInfo({...info, observation: event.target.value})
-    // setStatus(e.target.value);
   };
 
   console.log("info", info);

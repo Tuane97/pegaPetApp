@@ -52,20 +52,6 @@ export function useHttp(baseURL, headers) {
 		}
 	}
 
-	// const remove = async url => {
-	// 	try {
-	// 		const response = await instanceHttp.delete(url)
-
-	// 		return response.data
-	// 	} catch (error) {
-	// 		if (error.response.status === ERROR_UNAUTHORIZED) {
-	// 			setGlobalUser({})
-	// 		}
-
-	// 		throw error
-	// 	}
-	// }
-
 	return {
 		get,
 		put,

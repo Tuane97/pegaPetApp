@@ -5,7 +5,7 @@ import imageDefault from "../../../utils/images/profile-default.png"
 import "./processCreate.style.css"
 import { useGlobalUser } from '../../../context/user/user.context'
 import { HOME_ROUTE, PROCESS_INFO_CONST } from '../../../constants'
-import { useProcessAdopt, useProcessAdoptApi } from '../../../hooks/api/processAdopt/use-process.hooks'
+import { useProcessAdoptApi } from '../../../hooks/api/processAdopt/use-process.hooks'
 import { useNavigate } from 'react-router-dom'
 
 export const ProcessCreate = () => {

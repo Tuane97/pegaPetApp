@@ -3,9 +3,7 @@ import {Sidebar} from '../../components/sidebar/sidebar.component'
 import {useEffect, useState} from 'react'
 import imageDefault from "../../../utils/images/profile-default.png"
 import "../processCreate/processCreate.style.css"
-import { useGlobalUser } from '../../../context/user/user.context'
 import { ANIMAL_INFO_CONST, HOME_ROUTE, PROCESS_INFO_CONST } from '../../../constants'
-import { useProcessAdoptApi } from '../../../hooks/api/processAdopt/use-process.hooks'
 import { useNavigate } from 'react-router-dom'
 import { useUserApi } from '../../../hooks/api/user/use-user.hooks'
 import { useAnimalApi } from '../../../hooks/api/animal/use-animal.hooks'

@@ -16,15 +16,10 @@ export const useSecurityApi = () => {
 		return response
 	}
 
-	// const logout = async () => {
-	// 	return instanceHttp.post('/logout')
-	// }
-
 	return useMemo(
 		() => ({
 			login,
 			addUser
-			// logout
 		}),
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 		[]

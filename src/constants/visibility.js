@@ -1,1 +1,0 @@
-export const VISIBILITY_TYPES = ['PRIVATE', 'PUBLIC']

@@ -23,23 +23,3 @@
 .logo-item {
 	height: 35px;
 }
-/*
-.header__logout-post {
-	cursor: pointer;
-	display: flex;
-	width: min-content;
-}
-
-.header__logout-post > img {
-	width: 50%;
-	border-radius: 100%;
-}
-
-.logout-button {
-	background-color: transparent;
-	border: none;
-	font-family: 'Courier New', Courier, monospace;
-	font-size: 18px;
-	cursor: pointer;
-}
-*/

@@ -56,14 +56,8 @@ export const VisitList = () => {
                         <th>Status</th>
                     </tr>
 					{visit?.map(visit => (
-						<VisitCard key={visit?.id} /*loggedUser={loggedUser}*/ visit={visit} />
+						<VisitCard key={visit?.id} visit={visit} />
 					))}
-					{/* <button disabled={page === INITIAL_PAGE} onClick={handlePreviousPage}>
-						Previous Page
-					</button>
-					<button disabled={page === LAST_PAGE} onClick={handleNextPage}>
-						Next Page
-					</button> */}
 				</table>
 			) : (
 				<h3 className="message-empty">Não há visitas a serem exibidos</h3>

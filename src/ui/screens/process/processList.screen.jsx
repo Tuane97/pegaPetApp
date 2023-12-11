@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import "../../components/visits/visitList.style.css"
-import { ListProcess } from "./processList"
 import { ProcessCard } from "../../components/process/processCard.component"
 import { Header } from "../../components/header/header.component"
 import { Sidebar } from "../../components/sidebar/sidebar.component"
@@ -8,7 +7,6 @@ import { useProcessAdoptApi } from "../../../hooks/api/processAdopt/use-process.
 import { UserType } from "../../../utils/enums/userType.enum"
 import { usePagination } from "../../../hooks/paginatio/use-pagination"
 import { useUserApi } from "../../../hooks/api/user/use-user.hooks"
-import { useVisitApi } from "../../../hooks/api/visit/use-visit.hooks"
 
 export const ProcessList = (idUsuario) => {
     const [process, setProcess] = useState([])
